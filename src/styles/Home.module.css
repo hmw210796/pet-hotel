@@ -7,7 +7,7 @@
   min-height: 100vh;
 }
 
-.description {
+.breed {
   display: inherit;
   justify-content: inherit;
   align-items: inherit;
@@ -18,14 +18,14 @@
   font-family: var(--font-mono);
 }
 
-.description a {
+.breed a {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
 }
 
-.description p {
+.breed p {
   position: relative;
   margin: 0;
   padding: 1rem;
@@ -97,7 +97,7 @@
 
 .center::before,
 .center::after {
-  content: '';
+  content: "";
   left: 50%;
   position: absolute;
   filter: blur(45px);
@@ -125,7 +125,7 @@
 
 .thirteen::before,
 .thirteen::after {
-  content: '';
+  content: "";
   position: absolute;
   z-index: -1;
 }
@@ -203,23 +203,23 @@
     height: 300px;
   }
 
-  .description {
+  .breed {
     font-size: 0.8rem;
   }
 
-  .description a {
+  .breed a {
     padding: 1rem;
   }
 
-  .description p,
-  .description div {
+  .breed p,
+  .breed div {
     display: flex;
     justify-content: center;
     position: fixed;
     width: 100%;
   }
 
-  .description p {
+  .breed p {
     align-items: center;
     inset: 0 0 auto;
     padding: 2rem 1rem 1.4rem;
@@ -235,7 +235,7 @@
     backdrop-filter: blur(24px);
   }
 
-  .description div {
+  .breed div {
     align-items: flex-end;
     pointer-events: none;
     inset: auto 0 0;
