@@ -84,11 +84,11 @@ const NewPetsForm: React.FC<{
           <input type="text" required id="name" ref={nameInputRef} />
         </div>
         <div className={classes.control}>
-          <label htmlFor="image">Meetup Image</label>
+          <label htmlFor="image">Pet Photo</label>
           <input type="url" required id="image" ref={imageInputRef} />
         </div>{" "}
         <div className={classes.control}>
-          <label htmlFor="type">Pet Service</label>
+          <label htmlFor="type">Pet Care Service</label>
           <select name="class" id="class" ref={serviceInputRef}>
             <option>Choose...</option>
             <option value="Pet-Boarding">Pet Boarding</option>

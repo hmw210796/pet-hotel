@@ -5,6 +5,7 @@ import PetsSearch from "@/components/pets/PetsSearch";
 import { useRouter } from "next/router";
 import { PetTypes } from "@/components/pets/NewPetsForm";
 import { GetStaticProps, NextPage } from "next";
+import { useState } from "react";
 
 export interface HomePageProps {
   pets: PetTypes[];
@@ -12,6 +13,7 @@ export interface HomePageProps {
 
 const Home: NextPage<HomePageProps> = (props) => {
   const router = useRouter();
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
 
   const filterParam = router.query.filter;
 

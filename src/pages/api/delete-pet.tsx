@@ -2,9 +2,9 @@ import { MongoClient } from "mongodb";
 import { NextApiRequest, NextApiResponse } from "next";
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
-  if (req.method === "POST") {
+  if (req.method === "DELETE") {
     const data = req.body;
-    const { name, image, animalClass, animalBreed } = data;
+    const { id } = data;
 
     const client = await MongoClient.connect(`${process.env.MONGODB_URI}`);
     const db = client.db();
@@ -12,22 +12,6 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     const meetupsCollection = db.collection("Pet Boarding");
 
     const result = await meetupsCollection.insertOne(data);
-
-    console.log(result);
-
-    client.close();
-
-    res.status(201).json({ message: "Meetup inserted" });
-  } else if (req.method === "DELETE") {
-    const { id } = req.body;
-    const selectedId = id;
-
-    const client = await MongoClient.connect(`${process.env.MONGODB_URI}`);
-    const db = client.db();
-
-    const meetupsCollection = db.collection("Pet Boarding");
-
-    const result = await meetupsCollection.deleteOne({ id });
 
     console.log(result);
 

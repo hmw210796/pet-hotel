@@ -1,7 +1,6 @@
 import Card from "../ui/Card";
 import classes from "./PetItem.module.css";
 import { useRouter } from "next/navigation";
-import Image from "next/image";
 import { PetTypes } from "./NewPetsForm";
 
 const PetItem: React.FC<{ item: PetTypes }> = (props) => {
@@ -9,6 +8,10 @@ const PetItem: React.FC<{ item: PetTypes }> = (props) => {
   const router = useRouter();
   const showDetailsHandler = () => {
     router.push("/" + id);
+  };
+
+  const deleteHandler = () => {
+    router.push("/" + id + "/delete");
   };
 
   return (
@@ -21,8 +24,13 @@ const PetItem: React.FC<{ item: PetTypes }> = (props) => {
           <h3>{name}</h3>
           <p>{animalBreed}</p>
         </div>
-        <div className={classes.actions}>
-          <button onClick={showDetailsHandler}>Show Details</button>
+        <div className="flex justify-center">
+          <div className={classes.actions}>
+            <button onClick={showDetailsHandler}>Show Details</button>
+          </div>
+          <div className={classes.actions}>
+            <button onClick={deleteHandler}>Delete</button>
+          </div>
         </div>
       </Card>
     </li>
