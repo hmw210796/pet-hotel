@@ -42,7 +42,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
   const petsCollection = db.collection("Pet Boarding");
 
-  const pets = await petsCollection.find({}, { _id: 1 }).toArray();
+  const pets = await petsCollection
+    .find({}, { projection: { _id: 1 } })
+    .toArray();
 
   client.close();
 
